@@ -50,6 +50,7 @@ public class loginForm extends javax.swing.JFrame {
         pass = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        rgf = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +73,13 @@ public class loginForm extends javax.swing.JFrame {
 
         jLabel3.setText("password:");
 
+        rgf.setText("click to register");
+        rgf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rgfMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,9 +91,6 @@ public class loginForm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(212, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(296, 296, 296))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -99,7 +104,12 @@ public class loginForm extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addComponent(pass)))
-                        .addGap(211, 211, 211))))
+                        .addGap(211, 211, 211))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rgf, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addGap(261, 261, 261))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +126,9 @@ public class loginForm extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(111, 111, 111))
+                .addGap(38, 38, 38)
+                .addComponent(rgf)
+                .addGap(59, 59, 59))
         );
 
         pack();
@@ -136,6 +148,12 @@ public class loginForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Login Failed!");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void rgfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rgfMouseClicked
+        registrationform rgf = new registrationform();
+        rgf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_rgfMouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,6 +196,7 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField pass;
+    private javax.swing.JLabel rgf;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }
